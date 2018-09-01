@@ -18,10 +18,10 @@ header = {
     'X-Line-Application':LA,
     'User-Agent':LA
 }
-line = LINE(idOrAuthToken='your token')
-channel_token = line.issueChannelToken('1417913499').channelAccessToken
+line = LINE(idOrAuthToken='PukqfiJHXTi9ALRYUV8RRfXM6ib21eGvcNnnplqQIjQH9Z0cetJ6D9J0bcQvYwuvc/OM/yvfDw1Qp1DcrKqAWrsXO1E1rTcGJcq/+edlhxDTLrKFgskCYIsQMKQcpbOCNmG32YQrCOF8GLjzZmKKLQdB04t89/1O/w1cDnyilFU=')
+channel_token = line.issueChannelToken('1603505719').channelAccessToken
 print(channel_token)
-payload = {"channelAccessToken":channel_token, "udidHash":open('udidHash.txt').read()}
+payload = {"PukqfiJHXTi9ALRYUV8RRfXM6ib21eGvcNnnplqQIjQH9Z0cetJ6D9J0bcQvYwuvc/OM/yvfDw1Qp1DcrKqAWrsXO1E1rTcGJcq/+edlhxDTLrKFgskCYIsQMKQcpbOCNmG32YQrCOF8GLjzZmKKLQdB04t89/1O/w1cDnyilFU=":channel_token, "udidHash":open('udidHash.txt').read()}
 endpoint = '/plc/api/core/auth/cmsToken'
 res = requests.post(host+endpoint, data=json.dumps(payload), headers=header)
 print(res.json()["accessToken"]) # CMSToken
