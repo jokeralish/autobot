@@ -1,4 +1,4 @@
-from linepy import *
+from line import *
 import requests
 import json
 import random
